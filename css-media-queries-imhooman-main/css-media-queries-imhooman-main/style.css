@@ -1,0 +1,58 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    margin: 20px;
+    color: red;
+   
+}
+
+.title{
+    font-size: 6rem;
+    grid-area: title;
+}
+
+.subtitle{
+    font-size: 4rem;
+    grid-area: subtitle;
+}
+
+img{
+    max-width:100%;
+}
+
+.gallery{
+    /* setup Grid RAM */
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap:10px;
+}
+
+header{
+    /* setup the Grid Layout of the Title/Subtitle*/
+    display:grid;
+    /* grid-template:2fr 1fr/1fr 1fr ; */
+    grid-template-areas: "title   .  "
+    " .   subtitle";
+
+    
+}
+
+
+/* Add media queries below */
+@media (max-width: 1000px){
+    body{
+        color:blue
+    }
+}
+@media(max-width:600px){
+    header{
+        display: grid;
+        grid-template-areas: "title"
+        "subtitle";
+        color:orange;
+        justify-items: center;
+    }
+}
